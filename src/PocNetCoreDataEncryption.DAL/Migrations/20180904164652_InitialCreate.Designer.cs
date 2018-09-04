@@ -9,7 +9,7 @@ using PocNetCoreDataEncryption.DAL;
 namespace PocNetCoreDataEncryption.DAL.Migrations
 {
     [DbContext(typeof(Context))]
-    [Migration("20180831182811_InitialCreate")]
+    [Migration("20180904164652_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -26,23 +26,32 @@ namespace PocNetCoreDataEncryption.DAL.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("Address1");
+                    b.Property<string>("Address1")
+                        .IsRequired()
+                        .HasMaxLength(100);
 
-                    b.Property<string>("Address2");
+                    b.Property<string>("Address2")
+                        .HasMaxLength(100);
 
-                    b.Property<string>("City");
+                    b.Property<string>("City")
+                        .IsRequired()
+                        .HasMaxLength(100);
 
                     b.Property<int>("PatientId");
 
-                    b.Property<string>("State");
+                    b.Property<string>("State")
+                        .IsRequired()
+                        .HasMaxLength(20);
 
-                    b.Property<string>("Zip");
+                    b.Property<string>("Zip")
+                        .IsRequired()
+                        .HasMaxLength(10);
 
                     b.HasKey("Id");
 
                     b.HasIndex("PatientId");
 
-                    b.ToTable("Addresses");
+                    b.ToTable("Address");
                 });
 
             modelBuilder.Entity("PocNetCoreDataEncryption.Domain.Patient", b =>
@@ -51,17 +60,25 @@ namespace PocNetCoreDataEncryption.DAL.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("Email");
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasMaxLength(250);
 
-                    b.Property<string>("FirstName");
+                    b.Property<string>("FirstName")
+                        .IsRequired()
+                        .HasMaxLength(100);
 
-                    b.Property<string>("LastName");
+                    b.Property<string>("LastName")
+                        .IsRequired()
+                        .HasMaxLength(100);
 
-                    b.Property<string>("PhoneNumber");
+                    b.Property<string>("PhoneNumber")
+                        .IsRequired()
+                        .HasMaxLength(25);
 
                     b.HasKey("Id");
 
-                    b.ToTable("Patients");
+                    b.ToTable("Patient");
                 });
 
             modelBuilder.Entity("PocNetCoreDataEncryption.Domain.Address", b =>

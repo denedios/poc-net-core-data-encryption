@@ -17,7 +17,5 @@ namespace PocNetCoreDataEncryption.Domain
 
 
         public virtual List<Address> Addresses { get; set; }
-
-
     }
 }
