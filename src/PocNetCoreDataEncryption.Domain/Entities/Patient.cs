@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using PocNetCoreDataEncryption.Domain.Attributes;
 
 namespace PocNetCoreDataEncryption.Domain.Entities
 {
@@ -10,6 +11,7 @@ namespace PocNetCoreDataEncryption.Domain.Entities
 
         public string LastName { get; set; }
 
+        [Encrypted]
         public string Email { get; set; }
 
         public string PhoneNumber { get; set; }
