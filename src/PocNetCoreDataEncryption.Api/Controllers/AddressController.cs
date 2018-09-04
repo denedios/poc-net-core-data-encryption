@@ -1,9 +1,12 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using PocNetCoreDataEncryption.DAL;
-using PocNetCoreDataEncryption.Domain;
+using PocNetCoreDataEncryption.Domain.DTOs;
+using PocNetCoreDataEncryption.Domain.Entities;
 
 namespace PocNetCoreDataEncryption.Api.Controllers
 {
@@ -12,10 +15,12 @@ namespace PocNetCoreDataEncryption.Api.Controllers
     public class AddressController : ControllerBase
     {
         private readonly IAddressRepository _addressRepository;
+        private readonly IMapper _mapper;
 
-        public AddressController(IAddressRepository addressRepository)
+        public AddressController(IAddressRepository addressRepository, IMapper mapper)
         {
             _addressRepository = addressRepository;
+            _mapper = mapper;
         }
 
 
@@ -25,7 +30,8 @@ namespace PocNetCoreDataEncryption.Api.Controllers
         {
             try
             {
-                var addresses = await _addressRepository.GetAsync(take: 10);
+                var entities = await _addressRepository.GetAsync(take: 10);
+                var addresses = _mapper.Map<IEnumerable<AddressDto>>(entities);
                 return Ok(addresses.ToArray());
             }
             catch (Exception e)
@@ -40,7 +46,8 @@ namespace PocNetCoreDataEncryption.Api.Controllers
         {
             try
             {
-                var address = await _addressRepository.GetByIdAsync(id);
+                var entity = await _addressRepository.GetByIdAsync(id);
+                var address = _mapper.Map<AddressDto>(entity);
                 return Ok(address);
             }
             catch (Exception e)

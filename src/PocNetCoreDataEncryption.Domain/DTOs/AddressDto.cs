@@ -1,6 +1,6 @@
-﻿namespace PocNetCoreDataEncryption.Domain
+﻿namespace PocNetCoreDataEncryption.Domain.DTOs
 {
-    public class Address : IEntity
+    public class AddressDto
     {
         public int Id { get; set; }
 
@@ -13,13 +13,7 @@
         public string State { get; set; }
 
         public string Zip { get; set; }
-
-
+        
         public int PatientId { get; set; }
-
-        public virtual Patient Patient { get; set; }
-
-
-
     }
 }

@@ -1,9 +1,13 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using PocNetCoreDataEncryption.DAL;
 using PocNetCoreDataEncryption.Domain;
+using PocNetCoreDataEncryption.Domain.DTOs;
+using PocNetCoreDataEncryption.Domain.Entities;
 
 namespace PocNetCoreDataEncryption.Api.Controllers
 {
@@ -11,12 +15,13 @@ namespace PocNetCoreDataEncryption.Api.Controllers
     [ApiController]
     public class PatientController : ControllerBase
     {
-
+        private readonly IMapper _mapper;
         private readonly IPatientRepository _patientRepository;
 
-        public PatientController(IPatientRepository patientRepository)
+        public PatientController(IPatientRepository patientRepository, IMapper mapper)
         {
             _patientRepository = patientRepository;
+            _mapper = mapper;
         }
 
 
@@ -26,8 +31,9 @@ namespace PocNetCoreDataEncryption.Api.Controllers
         {
             try
             {
-                var patients = await _patientRepository.GetAsync(take: 10);
-                return Ok(patients.ToArray());
+                var entities = (await _patientRepository.GetAsync(take: 10)).ToList();
+                var patients = _mapper.Map<IEnumerable<PatientDto>>(entities);
+                return Ok(patients);
             }
             catch (Exception e)
             {
@@ -41,7 +47,8 @@ namespace PocNetCoreDataEncryption.Api.Controllers
         {
             try
             {
-                var patient = await _patientRepository.GetByIdAsync(id);
+                var entity = await _patientRepository.GetByIdAsync(id);
+                var patient = _mapper.Map<PatientDto>(entity);
                 return Ok(patient);
             }
             catch (Exception e)

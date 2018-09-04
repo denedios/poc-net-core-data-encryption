@@ -1,4 +1,5 @@
 ﻿using PocNetCoreDataEncryption.Domain;
+using PocNetCoreDataEncryption.Domain.Entities;
 
 namespace PocNetCoreDataEncryption.DAL
 {

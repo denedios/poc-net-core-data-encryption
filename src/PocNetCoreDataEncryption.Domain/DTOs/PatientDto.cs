@@ -1,9 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
-namespace PocNetCoreDataEncryption.Domain
+namespace PocNetCoreDataEncryption.Domain.DTOs
 {
-    public class Patient : IEntity
+    public class PatientDto
     {
         public int Id { get; set; }
 
@@ -14,8 +13,7 @@ namespace PocNetCoreDataEncryption.Domain
         public string Email { get; set; }
 
         public string PhoneNumber { get; set; }
-
-
-        public virtual List<Address> Addresses { get; set; }
+        
+        public virtual List<AddressDto> Addresses { get; set; }
     }
 }
