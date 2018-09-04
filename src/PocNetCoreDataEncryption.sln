@@ -3,11 +3,16 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28010.2016
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PocNetCoreDataEncryption", "PocNetCoreDataEncryption\PocNetCoreDataEncryption.csproj", "{67380E98-5889-4C6A-B8B8-62E8770D4877}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PocNetCoreDataEncryption.DAL", "PocNetCoreDataEncryption.DAL\PocNetCoreDataEncryption.DAL.csproj", "{3B09D31A-FFCB-4551-B33E-B0A6FB121803}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PocNetCoreDataEncryption.DAL", "PocNetCoreDataEncryption.DAL\PocNetCoreDataEncryption.DAL.csproj", "{3B09D31A-FFCB-4551-B33E-B0A6FB121803}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PocNetCoreDataEncryption.Domain", "PocNetCoreDataEncryption.Domain\PocNetCoreDataEncryption.Domain.csproj", "{2B7B5891-9F02-400F-963B-FA88ECDDDE93}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PocNetCoreDataEncryption.Domain", "PocNetCoreDataEncryption.Domain\PocNetCoreDataEncryption.Domain.csproj", "{2B7B5891-9F02-400F-963B-FA88ECDDDE93}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PocNetCoreDataEncryption.Api", "PocNetCoreDataEncryption.Api\PocNetCoreDataEncryption.Api.csproj", "{A02FB696-607C-442F-B314-D55ABF7209FD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".build", ".build", "{E14FB957-2493-4C91-9B72-A19DA72B6733}"
+	ProjectSection(SolutionItems) = preProject
+		..\.gitignore = ..\.gitignore
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,10 +20,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{67380E98-5889-4C6A-B8B8-62E8770D4877}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{67380E98-5889-4C6A-B8B8-62E8770D4877}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{67380E98-5889-4C6A-B8B8-62E8770D4877}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{67380E98-5889-4C6A-B8B8-62E8770D4877}.Release|Any CPU.Build.0 = Release|Any CPU
 		{3B09D31A-FFCB-4551-B33E-B0A6FB121803}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{3B09D31A-FFCB-4551-B33E-B0A6FB121803}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3B09D31A-FFCB-4551-B33E-B0A6FB121803}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -27,6 +28,10 @@ Global
 		{2B7B5891-9F02-400F-963B-FA88ECDDDE93}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2B7B5891-9F02-400F-963B-FA88ECDDDE93}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2B7B5891-9F02-400F-963B-FA88ECDDDE93}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A02FB696-607C-442F-B314-D55ABF7209FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A02FB696-607C-442F-B314-D55ABF7209FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A02FB696-607C-442F-B314-D55ABF7209FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A02FB696-607C-442F-B314-D55ABF7209FD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
