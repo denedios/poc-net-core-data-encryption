@@ -1,5 +1,4 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using PocNetCoreDataEncryption.Domain;
 using PocNetCoreDataEncryption.Domain.Entities;
 
 namespace PocNetCoreDataEncryption.DAL
@@ -11,7 +10,7 @@ namespace PocNetCoreDataEncryption.DAL
 
     public class AddressRepository : Repository<Address>, IAddressRepository
     {
-        public AddressRepository(Context context) : base(context)
+        public AddressRepository(Context context) : base((DbContext) context)
         {
         }
     }

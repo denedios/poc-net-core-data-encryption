@@ -11,7 +11,7 @@ namespace PocNetCoreDataEncryption.Domain.Entities
 
         public string LastName { get; set; }
 
-        [Encrypted]
+        //[Encrypted]
         public string Email { get; set; }
 
         public string PhoneNumber { get; set; }

@@ -6,6 +6,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using PocNetCoreDataEncryption.DAL;
+using PocNetCoreDataEncryption.DAL2;
 using Swashbuckle.AspNetCore.Swagger;
 
 namespace PocNetCoreDataEncryption.Api

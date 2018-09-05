@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using PocNetCoreDataEncryption.DAL;
+using PocNetCoreDataEncryption.DAL2;
 using PocNetCoreDataEncryption.Domain;
 using PocNetCoreDataEncryption.Domain.DTOs;
 using PocNetCoreDataEncryption.Domain.Entities;

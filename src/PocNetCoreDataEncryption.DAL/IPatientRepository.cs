@@ -1,7 +1,7 @@
-﻿using PocNetCoreDataEncryption.Domain;
+﻿using PocNetCoreDataEncryption.DAL;
 using PocNetCoreDataEncryption.Domain.Entities;
 
-namespace PocNetCoreDataEncryption.DAL
+namespace PocNetCoreDataEncryption.DAL2
 {
     public interface IPatientRepository : IRepository<Patient>
     {
